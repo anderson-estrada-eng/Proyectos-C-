@@ -1,76 +1,30 @@
-//!bool:Si o no
-//Para preparar el código
-#include <utility>
-#include <vector>
+#include <iostream>//para poder escucharle y que me escuche mi computadora con std::cout y std:cin
+#include <string>//Para que entienda palabras,manipule,etc
+#include <cctype> // Para manejar mayúsculas/minúsculas
 
-std::string(palabra)
-std::cin >> palabra;
-//Para saber si es verdad o falso que no se repiten letras en la palabra.
-bool is_isogram(const std::string& palabra)
-//Para medir la palabra
-    {{
-    length(palabra);
-    for(({
-        palabra(i=0;
-                i<palabra.length();
-                ++i))
-                
-        for(
-            palabra(j;
-                ++j;
-                if (palabra[i] == palabra[j]))))}};
-
-    unsigned(palabra)}
-
-std::pair(palabra)
-if
-    (is_isogram(palabra))
-        std::cout<<"True";
-else
-    std::cout<<"False";
+bool is_isogram(std::string palabra) {
+    // Comparamos cada letra (i) con las siguientes (j)
+    for (size_t i = 0; i < palabra.length(); ++i) {
+        for (size_t j = i + 1; j < palabra.length(); ++j) {
+            // Convertimos a minúsculas para que 'A' sea igual a 'a'
+            if (tolower(palabra[i]) == tolower(palabra[j])) {
+                return false; // ¡Se repite! No es isograma
+            }
+        }
     }
-return
-    true
-    else
-    false
-    
-    
+    return true; // Si terminó los bucles, todo está bien
+}
 
-    
-    
+int main() {
+    std::string palabra;
+    std::cout << "Dime una palabra: ";
+    std::cin >> palabra;
 
-        
-        
-const jdwbn
-if
-    palabra=is_isogram;
-        true
-else
-    palabra=is not_isogram;
-        false
+    if (is_isogram(palabra)) {
+        std::cout << "Es un isograma (True)" << std::endl;
+    } else {
+        std::cout << "No es un isograma (False)" << std::endl;
+    }
 
-return
-    palabra;
-
-
-
-i
-j
-unsigned
-std::pair
-bool    (     perro)
-isogram
-str::
-s
-i
-j
-++i
-i++
-const
-En:bool is_isogram(const std::string& str)
-length()
-return
-;
-std::pair
-unsigned
-<>
+    return 0;
+}
